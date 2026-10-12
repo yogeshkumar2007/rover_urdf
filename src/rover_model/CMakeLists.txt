@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ros3)
+project(rover_model)
 
 find_package(ament_cmake REQUIRED)
 

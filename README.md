@@ -4,9 +4,9 @@ ROS 2 description package for a six-wheel rover. The package contains the rover 
 
 ## Package layout
 
-- `src/ros3/urdf/rover_model.urdf` - main rover model
-- `src/ros3/meshes/` - STL visual and collision meshes
-- `src/ros3/launch/display.launch.py` - display launch file
+- `src/rover_model/urdf/rover_model.urdf` - main rover model
+- `src/rover_model/meshes/` - STL visual and collision meshes
+- `src/rover_model/launch/display.launch.py` - display launch file
 
 ## Requirements
 
@@ -21,14 +21,14 @@ From the workspace root:
 
 ```bash
 source /opt/ros/<ros2-distro>/setup.bash
-colcon build --symlink-install --packages-select ros3
+colcon build --symlink-install --packages-select rover_model
 source install/setup.bash
 ```
 
 ## Display the rover
 
 ```bash
-ros2 launch ros3 display.launch.py
+ros2 launch rover_model display.launch.py
 ```
 
 The generated `build/`, `install/`, and `log/` directories are intentionally excluded from version control.

@@ -6,7 +6,7 @@ from ament_index_python.packages import get_package_share_directory
 
 
 def generate_launch_description():
-    package_path = get_package_share_directory('ros3')
+    package_path = get_package_share_directory('rover_model')
 
     urdf_path = os.path.join(
         package_path, 'urdf', 'rover_model.urdf'
