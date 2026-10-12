@@ -15,13 +15,13 @@
         <visual name="base_link_visual">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/base_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="base_link_collision">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/base_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -34,13 +34,13 @@
         <visual name="c_bar_right_visual">
             <origin xyz="0.015 -2.5679653603560837e-09 0.0" rpy="0.0 -0.0 0.0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/c_bar_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/c_bar_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="c_bar_right_collision">
             <origin xyz="0.015 -2.5679653603560837e-09 0.0" rpy="0.0 -0.0 0.0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/c_bar_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/c_bar_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -53,13 +53,13 @@
         <visual name="c_bar_left_visual">
             <origin xyz="0.0 -0.015 -0.006999999999999922" rpy="1.5707963267948966 1.2246467991473532e-16 0.0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/c_bar_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/c_bar_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="c_bar_left_collision">
             <origin xyz="0.0 -0.015 -0.006999999999999922" rpy="1.5707963267948966 1.2246467991473532e-16 0.0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/c_bar_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/c_bar_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -72,13 +72,13 @@
         <visual name="lidar_mount_visual">
             <origin xyz="-0.0012940952255125994 -0.06499999999999999 0.0003467487346647813" rpy="1.2760764138000777e-32 0.2617993877991494 -1.2246467991473535e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/lidar_mount.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/lidar_mount.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="lidar_mount_collision">
             <origin xyz="-0.0012940952255125994 -0.06499999999999999 0.0003467487346647813" rpy="1.2760764138000777e-32 0.2617993877991494 -1.2246467991473535e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/lidar_mount.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/lidar_mount.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -91,13 +91,13 @@
         <visual name="lidar_link_visual">
             <origin xyz="-1.9061717182466965e-09 7.077671781985373e-18 3.3262442133974445e-10" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/lidar_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/lidar_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="lidar_link_collision">
             <origin xyz="-1.9061717182466965e-09 7.077671781985373e-18 3.3262442133974445e-10" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/lidar_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/lidar_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -110,13 +110,13 @@
         <visual name="main_mount_right_visual">
             <origin xyz="1.6653345369377347e-18 0.030310889132455308 2.5679653603560837e-09" rpy="-1.5707963267948966 -0.0 -5.551115123125794e-17" />
             <geometry>
-                <mesh filename="package://ros3/meshes/main_mount_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/main_mount_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="main_mount_right_collision">
             <origin xyz="1.6653345369377347e-18 0.030310889132455308 2.5679653603560837e-09" rpy="-1.5707963267948966 -0.0 -5.551115123125794e-17" />
             <geometry>
-                <mesh filename="package://ros3/meshes/main_mount_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/main_mount_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -129,13 +129,13 @@
         <visual name="main_mount_left_visual">
             <origin xyz="5.992545734006014e-97 -0.030310889132455342 7.105427357601002e-17" rpy="1.5707963267948966 4.8810768510550105e-30 0.0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/main_mount_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/main_mount_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="main_mount_left_collision">
             <origin xyz="5.992545734006014e-97 -0.030310889132455342 7.105427357601002e-17" rpy="1.5707963267948966 4.8810768510550105e-30 0.0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/main_mount_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/main_mount_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -148,13 +148,13 @@
         <visual name="rocker_left_visual">
             <origin xyz="0.0 7.105427357601002e-17 0.0" rpy="-1.2246467991473288e-16 -1.5707963267948966 0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/rocker_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/rocker_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="rocker_left_collision">
             <origin xyz="0.0 7.105427357601002e-17 0.0" rpy="-1.2246467991473288e-16 -1.5707963267948966 0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/rocker_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/rocker_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -167,13 +167,13 @@
         <visual name="rocker_right_visual">
             <origin xyz="0.0 -2.5679653603560837e-09 -3.552713678800501e-17" rpy="-1.2246467991473535e-16 -1.5707963267948966 0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/rocker_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/rocker_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="rocker_right_collision">
             <origin xyz="0.0 -2.5679653603560837e-09 -3.552713678800501e-17" rpy="-1.2246467991473535e-16 -1.5707963267948966 0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/rocker_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/rocker_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -186,13 +186,13 @@
         <visual name="bog1_left_visual">
             <origin xyz="8.881784197001253e-18 7.105427357601002e-17 -8.881784197001253e-18" rpy="-1.2246467991473288e-16 -1.5707963267948966 0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog1_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog1_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="bog1_left_collision">
             <origin xyz="8.881784197001253e-18 7.105427357601002e-17 -8.881784197001253e-18" rpy="-1.2246467991473288e-16 -1.5707963267948966 0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog1_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog1_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -205,13 +205,13 @@
         <visual name="bog1_right_visual">
             <origin xyz="9.992007221626408e-18 -2.5679653603560837e-09 -3.552713678800501e-17" rpy="-1.2246467991473532e-16 -1.5707963267948966 0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog1_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog1_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="bog1_right_collision">
             <origin xyz="9.992007221626408e-18 -2.5679653603560837e-09 -3.552713678800501e-17" rpy="-1.2246467991473532e-16 -1.5707963267948966 0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog1_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog1_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -224,13 +224,13 @@
         <visual name="bog_joint_left_visual">
             <origin xyz="1.7763568394002505e-17 -7.105427357601002e-17 -4.14850127583577e-09" rpy="-1.224646799147256e-16 -1.0471975511965979 3.141592653589793" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog_joint_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog_joint_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="bog_joint_left_collision">
             <origin xyz="1.7763568394002505e-17 -7.105427357601002e-17 -4.14850127583577e-09" rpy="-1.224646799147256e-16 -1.0471975511965979 3.141592653589793" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog_joint_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog_joint_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -243,13 +243,13 @@
         <visual name="bog_joint_right_visual">
             <origin xyz="3.552713678800501e-17 2.5679653603560837e-09 -4.148501311362907e-09" rpy="-1.2246467991473535e-16 -1.047197551196598 -3.141592653589793" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog_joint_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog_joint_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="bog_joint_right_collision">
             <origin xyz="3.552713678800501e-17 2.5679653603560837e-09 -4.148501311362907e-09" rpy="-1.2246467991473535e-16 -1.047197551196598 -3.141592653589793" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog_joint_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog_joint_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -262,13 +262,13 @@
         <visual name="bog2_right_visual">
             <origin xyz="-0.11249999999999993 2.5679653603560837e-09 0.19485571189221954" rpy="-3.141592653589793 1.047197551196598 3.532649053774702e-32" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog2_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog2_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="bog2_right_collision">
             <origin xyz="-0.11249999999999993 2.5679653603560837e-09 0.19485571189221954" rpy="-3.141592653589793 1.047197551196598 3.532649053774702e-32" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog2_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog2_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -281,13 +281,13 @@
         <visual name="bog3_right_visual">
             <origin xyz="-0.17637495542004736 2.5679653958832205e-09 0.10183012363092035" rpy="3.141592653589793 0.5235987755982993 -1.9316969582972922e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog3_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog3_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="bog3_right_collision">
             <origin xyz="-0.17637495542004736 2.5679653958832205e-09 0.10183012363092035" rpy="3.141592653589793 0.5235987755982993 -1.9316969582972922e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog3_right.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog3_right.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -300,13 +300,13 @@
         <visual name="wheel_joint_3_visual">
             <origin xyz="-0.02499999999999986 2.5679653603560837e-09 -0.04330127208144134" rpy="1.2246467991473532e-16 -1.047197551196598 2.3000538893668714e-32" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_3.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_3.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="wheel_joint_3_collision">
             <origin xyz="-0.02499999999999986 2.5679653603560837e-09 -0.04330127208144134" rpy="1.2246467991473532e-16 -1.047197551196598 2.3000538893668714e-32" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_3.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_3.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -319,13 +319,13 @@
         <visual name="wheel_joint_2_visual">
             <origin xyz="-0.02153590201578261 -2.56796528930181e-09 0.045301269647113646" rpy="3.3457972765971633e-16 1.0471975511965974 3.345797276597165e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_2.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_2.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="wheel_joint_2_collision">
             <origin xyz="-0.02153590201578261 -2.56796528930181e-09 0.045301269647113646" rpy="3.3457972765971633e-16 1.0471975511965974 3.345797276597165e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_2.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_2.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -338,13 +338,13 @@
         <visual name="wheel_joint_1_visual">
             <origin xyz="-0.03415063509461089 -2.5679653603560837e-09 -0.009150636986830493" rpy="2.1211504774498128e-16 0.5235987755982986 4.242300954899627e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_1.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_1.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="wheel_joint_1_collision">
             <origin xyz="-0.03415063509461089 -2.5679653603560837e-09 -0.009150636986830493" rpy="2.1211504774498128e-16 0.5235987755982986 4.242300954899627e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_1.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_1.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -357,13 +357,13 @@
         <visual name="bog3_left_visual">
             <origin xyz="-0.17637495542004744 -3.552713678800501e-17 0.10183012363092031" rpy="3.141592653589793 0.5235987755982991 -1.9316969582972427e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog3_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog3_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="bog3_left_collision">
             <origin xyz="-0.17637495542004744 -3.552713678800501e-17 0.10183012363092031" rpy="3.141592653589793 0.5235987755982991 -1.9316969582972427e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog3_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog3_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -376,13 +376,13 @@
         <visual name="bog2_left_visual">
             <origin xyz="1.7763568394002505e-17 -7.105427357601002e-17 -3.959279304410757e-09" rpy="-1.224646799147256e-16 -1.0471975511965979 3.141592653589793" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog2_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog2_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="bog2_left_collision">
             <origin xyz="1.7763568394002505e-17 -7.105427357601002e-17 -3.959279304410757e-09" rpy="-1.224646799147256e-16 -1.0471975511965979 3.141592653589793" />
             <geometry>
-                <mesh filename="package://ros3/meshes/bog2_left.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/bog2_left.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -395,13 +395,13 @@
         <visual name="wheel_joint_4_visual">
             <origin xyz="0.009150635094610919 7.105427357601002e-17 -0.03415063698683049" rpy="-1.4141003182998189e-16 -0.5235987755982987 -3.141592653589793" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_4.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_4.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="wheel_joint_4_collision">
             <origin xyz="0.009150635094610919 7.105427357601002e-17 -0.03415063698683049" rpy="-1.4141003182998189e-16 -0.5235987755982987 -3.141592653589793" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_4.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_4.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -414,13 +414,13 @@
         <visual name="wheel_joint_5_visual">
             <origin xyz="-0.0306865371103936 3.552713678800501e-17 0.011150634552502776" rpy="-3.141592653589793 -0.5235987755982989 -5.175966399973733e-17" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_5.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_5.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="wheel_joint_5_collision">
             <origin xyz="-0.0306865371103936 3.552713678800501e-17 0.011150634552502776" rpy="-3.141592653589793 -0.5235987755982989 -5.175966399973733e-17" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_5.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_5.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -433,13 +433,13 @@
         <visual name="wheel_joint_6_visual">
             <origin xyz="-0.03415063509461106 -7.105427357601002e-17 -0.00915063698683028" rpy="1.4141003182998198e-16 0.523598775598299 2.828200636599724e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_6.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_6.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="wheel_joint_6_collision">
             <origin xyz="-0.03415063509461106 -7.105427357601002e-17 -0.00915063698683028" rpy="1.4141003182998198e-16 0.523598775598299 2.828200636599724e-16" />
             <geometry>
-                <mesh filename="package://ros3/meshes/wheel_joint_6.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/wheel_joint_6.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -452,13 +452,13 @@
         <visual name="camera_link_visual">
             <origin xyz="4.4256448461510446e-09 -0.060500000000000005 0.0050000004657985994" rpy="0.0 -0.0 0.0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/camera_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/camera_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="camera_link_collision">
             <origin xyz="4.4256448461510446e-09 -0.060500000000000005 0.0050000004657985994" rpy="0.0 -0.0 0.0" />
             <geometry>
-                <mesh filename="package://ros3/meshes/camera_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/camera_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -471,13 +471,13 @@
         <visual name="left_front_wheel_link_visual">
             <origin xyz="-3.013169447285691e-09 -1.0658141036401502e-16 -0.15000000000000038" rpy="-1.5707963267949032 8.212248910166459e-16 -0.5235987755983019" />
             <geometry>
-                <mesh filename="package://ros3/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="left_front_wheel_link_collision">
             <origin xyz="-3.013169447285691e-09 -1.0658141036401502e-16 -0.15000000000000038" rpy="-1.5707963267949032 8.212248910166459e-16 -0.5235987755983019" />
             <geometry>
-                <mesh filename="package://ros3/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -490,13 +490,13 @@
         <visual name="left_mid_wheel_link_visual">
             <origin xyz="-4.552502774757272e-09 -2.0157827052003086e-09 -0.1500000000000001" rpy="-1.5707963267948966 -2.449782889260564e-31 0.5235987755982989" />
             <geometry>
-                <mesh filename="package://ros3/meshes/left_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/left_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="left_mid_wheel_link_collision">
             <origin xyz="-4.552502774757272e-09 -2.0157827052003086e-09 -0.1500000000000001" rpy="-1.5707963267948966 -2.449782889260564e-31 0.5235987755982989" />
             <geometry>
-                <mesh filename="package://ros3/meshes/left_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/left_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -509,13 +509,13 @@
         <visual name="left_rear_wheel_link_visual">
             <origin xyz="3.013169731502785e-09 7.105427357601002e-17 -0.1500000000000001" rpy="-1.5707963267948963 -1.2246467991473475e-16 0.523598775598299" />
             <geometry>
-                <mesh filename="package://ros3/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="left_rear_wheel_link_collision">
             <origin xyz="3.013169731502785e-09 7.105427357601002e-17 -0.1500000000000001" rpy="-1.5707963267948963 -1.2246467991473475e-16 0.523598775598299" />
             <geometry>
-                <mesh filename="package://ros3/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -528,13 +528,13 @@
         <visual name="right_front_wheel_link_visual">
             <origin xyz="-3.013169447285691e-09 1.4210854715202004e-16 2.567965466937494e-09" rpy="-1.570796326794897 -1.8369701987210297e-16 -0.5235987755982986" />
             <geometry>
-                <mesh filename="package://ros3/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="right_front_wheel_link_collision">
             <origin xyz="-3.013169447285691e-09 1.4210854715202004e-16 2.567965466937494e-09" rpy="-1.570796326794897 -1.8369701987210297e-16 -0.5235987755982986" />
             <geometry>
-                <mesh filename="package://ros3/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -547,13 +547,13 @@
         <visual name="right_mid_wheel_link_visual">
             <origin xyz="-4.552502632648725e-09 -2.0157827407274454e-09 2.5679651827204e-09" rpy="-1.5707963267948966 8.421745601543823e-32 0.5235987755982993" />
             <geometry>
-                <mesh filename="package://ros3/meshes/right_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/right_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="right_mid_wheel_link_collision">
             <origin xyz="-4.552502632648725e-09 -2.0157827407274454e-09 2.5679651827204e-09" rpy="-1.5707963267948966 8.421745601543823e-32 0.5235987755982993" />
             <geometry>
-                <mesh filename="package://ros3/meshes/right_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/right_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
@@ -566,13 +566,13 @@
         <visual name="right_rear_wheel_link_visual">
             <origin xyz="3.013169447285691e-09 3.552713678800501e-17 -0.15000000256796536" rpy="1.5707963267948968 6.123233995736762e-17 -0.5235987755982986" />
             <geometry>
-                <mesh filename="package://ros3/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </visual>
         <collision name="right_rear_wheel_link_collision">
             <origin xyz="3.013169447285691e-09 3.552713678800501e-17 -0.15000000256796536" rpy="1.5707963267948968 6.123233995736762e-17 -0.5235987755982986" />
             <geometry>
-                <mesh filename="package://ros3/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://rover_model/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
             </geometry>
         </collision>
     </link>
