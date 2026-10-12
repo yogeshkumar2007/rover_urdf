@@ -1,0 +1,748 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="rover_model">
+    <!--
+      Nav2/LIO-SAM frame note:
+      This URDF publishes only the robot's internal fixed/joint transforms.
+      It must not define map->odom or odom->base_link; localization/odometry
+      must publish those runtime transforms. LiDAR mounting joint is preserved.
+    -->
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0.031330441820359496 -7.986858848400889e-09 0.0026984227429344165" rpy="0.0 0.0 0.0" />
+            <mass value="10.569880366029395" />
+            <inertia ixx="0.48830847094676166" iyy="0.5029072481876234" izz="0.7920809271889268" ixy="-8.140690894917646e-09" iyz="1.2775044569384038e-09" ixz="-0.0008699026196201435" />
+        </inertial>
+        <visual name="base_link_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="base_link_collision">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="c_bar_right">
+        <inertial>
+            <origin xyz="0.015 -0.00850000256796541 0.0" rpy="0.0 -0.0 0.0" />
+            <mass value="0.09433024641485052" />
+            <inertia ixx="7.5778631286587544e-06" iyy="1.0612152721670543e-05" izz="7.5778631286587544e-06" ixy="2.7888802378583932e-21" iyz="-1.3944401189291966e-21" ixz="0.0" />
+        </inertial>
+        <visual name="c_bar_right_visual">
+            <origin xyz="0.015 -2.5679653603560837e-09 0.0" rpy="0.0 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/c_bar_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="c_bar_right_collision">
+            <origin xyz="0.015 -2.5679653603560837e-09 0.0" rpy="0.0 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/c_bar_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="c_bar_left">
+        <inertial>
+            <origin xyz="1.0409497792752504e-18 -0.015 0.0015000000000000924" rpy="0.0 -0.0 0.0" />
+            <mass value="0.09433024641485052" />
+            <inertia ixx="7.577863128659622e-06" iyy="7.577863128659622e-06" izz="1.0612152721670538e-05" ixy="-2.7888802378583932e-21" iyz="-1.3944401189291962e-21" ixz="4.554913660564301e-21" />
+        </inertial>
+        <visual name="c_bar_left_visual">
+            <origin xyz="0.0 -0.015 -0.006999999999999922" rpy="1.5707963267948966 1.2246467991473532e-16 0.0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/c_bar_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="c_bar_left_collision">
+            <origin xyz="0.0 -0.015 -0.006999999999999922" rpy="1.5707963267948966 1.2246467991473532e-16 0.0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/c_bar_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="lidar_mount">
+        <inertial>
+            <origin xyz="0.03308335229972137 -0.06499999999999999 -0.008831031773329681" rpy="0.0 -0.0 0.0" />
+            <mass value="0.7616155332039044" />
+            <inertia ixx="0.0013000069709573781" iyy="0.00030429575252186036" izz="0.0015517772866578822" ixy="-4.2594134931011437e-19" iyz="7.178520801293427e-20" ixz="7.365800258735903e-05" />
+        </inertial>
+        <visual name="lidar_mount_visual">
+            <origin xyz="-0.0012940952255125994 -0.06499999999999999 0.0003467487346647813" rpy="1.2760764138000777e-32 0.2617993877991494 -1.2246467991473535e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/lidar_mount.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="lidar_mount_collision">
+            <origin xyz="-0.0012940952255125994 -0.06499999999999999 0.0003467487346647813" rpy="1.2760764138000777e-32 0.2617993877991494 -1.2246467991473535e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/lidar_mount.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="lidar_link">
+        <inertial>
+            <origin xyz="0.004059881504131937 2.0816681711721684e-19 0.01515169149268377" rpy="0.0 -0.0 2.3738919364399497e-66" />
+            <mass value="0.928173425335894" />
+            <inertia ixx="0.00038375547092533773" iyy="0.0003732119228702646" izz="0.0005200646029497047" ixy="-5.421010862427522e-19" iyz="4.7433845046240807e-20" ixz="3.9349057033621904e-05" />
+        </inertial>
+        <visual name="lidar_link_visual">
+            <origin xyz="-1.9061717182466965e-09 7.077671781985373e-18 3.3262442133974445e-10" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/lidar_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="lidar_link_collision">
+            <origin xyz="-1.9061717182466965e-09 7.077671781985373e-18 3.3262442133974445e-10" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/lidar_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="main_mount_right">
+        <inertial>
+            <origin xyz="5.436063032139884e-19 0.010103629710818431 0.01500000256796536" rpy="0.0 -0.0 0.0" />
+            <mass value="0.4996750073485267" />
+            <inertia ixx="0.00013949260621811538" iyy="0.00013949260621811538" izz="0.0002040339613339828" ixy="-1.7848833522293647e-19" iyz="0.0" ixz="4.4622083805734226e-20" />
+        </inertial>
+        <visual name="main_mount_right_visual">
+            <origin xyz="1.6653345369377347e-18 0.030310889132455308 2.5679653603560837e-09" rpy="-1.5707963267948966 -0.0 -5.551115123125794e-17" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/main_mount_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="main_mount_right_collision">
+            <origin xyz="1.6653345369377347e-18 0.030310889132455308 2.5679653603560837e-09" rpy="-1.5707963267948966 -0.0 -5.551115123125794e-17" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/main_mount_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="main_mount_left">
+        <inertial>
+            <origin xyz="-4.4651106368634055e-18 -0.010103629710818436 0.01500000000000007" rpy="0.0 -0.0 0.0" />
+            <mass value="0.4996750073485261" />
+            <inertia ixx="0.00013949260621812926" iyy="0.00013949260621812926" izz="0.00020403396133398144" ixy="5.796246721104558e-19" iyz="-3.99154592560896e-99" ixz="5.577760475716566e-20" />
+        </inertial>
+        <visual name="main_mount_left_visual">
+            <origin xyz="5.992545734006014e-97 -0.030310889132455342 7.105427357601002e-17" rpy="1.5707963267948966 4.8810768510550105e-30 0.0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/main_mount_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="main_mount_left_collision">
+            <origin xyz="5.992545734006014e-97 -0.030310889132455342 7.105427357601002e-17" rpy="1.5707963267948966 4.8810768510550105e-30 0.0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/main_mount_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="rocker_left">
+        <inertial>
+            <origin xyz="1.5543122344752193e-17 1.0658141036401502e-16 0.2500000000000001" rpy="0.0 -0.0 0.0" />
+            <mass value="2.7744190122014856" />
+            <inertia ixx="0.05795645715696712" iyy="0.057956457156967206" izz="0.000312122138872603" ixy="1.859271017917186e-18" iyz="3.0975927483701776e-17" ixz="2.42861286636753e-17" />
+        </inertial>
+        <visual name="rocker_left_visual">
+            <origin xyz="0.0 7.105427357601002e-17 0.0" rpy="-1.2246467991473288e-16 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/rocker_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="rocker_left_collision">
+            <origin xyz="0.0 7.105427357601002e-17 0.0" rpy="-1.2246467991473288e-16 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/rocker_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="rocker_right">
+        <inertial>
+            <origin xyz="2.3314683517128286e-17 -2.567965324828947e-09 0.25" rpy="0.0 5.551115123125784e-17 0.0" />
+            <mass value="2.7744190122014856" />
+            <inertia ixx="0.05795645715696731" iyy="0.057956457156967206" izz="0.0003121221388727067" ixy="-1.0159245771980102e-17" iyz="3.7914821387609004e-17" ixz="3.122502256758253e-17" />
+        </inertial>
+        <visual name="rocker_right_visual">
+            <origin xyz="0.0 -2.5679653603560837e-09 -3.552713678800501e-17" rpy="-1.2246467991473535e-16 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/rocker_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="rocker_right_collision">
+            <origin xyz="0.0 -2.5679653603560837e-09 -3.552713678800501e-17" rpy="-1.2246467991473535e-16 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/rocker_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="bog1_left">
+        <inertial>
+            <origin xyz="7.771561172376097e-18 7.105427357601002e-17 0.1125" rpy="0.0 -0.0 0.0" />
+            <mass value="1.248488555490669" />
+            <inertia ixx="0.005337288574722631" iyy="0.005337288574722605" izz="0.00014045496249271732" ixy="4.64817754479295e-19" iyz="-7.743981870925444e-18" ixz="4.336808689942018e-19" />
+        </inertial>
+        <visual name="bog1_left_visual">
+            <origin xyz="8.881784197001253e-18 7.105427357601002e-17 -8.881784197001253e-18" rpy="-1.2246467991473288e-16 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog1_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="bog1_left_collision">
+            <origin xyz="8.881784197001253e-18 7.105427357601002e-17 -8.881784197001253e-18" rpy="-1.2246467991473288e-16 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog1_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="bog1_right">
+        <inertial>
+            <origin xyz="2.1094237467877975e-17 -2.5679653603560837e-09 0.11249999999999996" rpy="0.0 -5.551115123125784e-17 0.0" />
+            <mass value="1.248488555490669" />
+            <inertia ixx="0.005337288574722598" iyy="0.005337288574722605" izz="0.000140454962492682" ixy="-3.0046291974743192e-18" iyz="-1.7347234759768065e-18" ixz="7.37257477290143e-18" />
+        </inertial>
+        <visual name="bog1_right_visual">
+            <origin xyz="9.992007221626408e-18 -2.5679653603560837e-09 -3.552713678800501e-17" rpy="-1.2246467991473532e-16 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog1_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="bog1_right_collision">
+            <origin xyz="9.992007221626408e-18 -2.5679653603560837e-09 -3.552713678800501e-17" rpy="-1.2246467991473532e-16 -1.5707963267948966 0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog1_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="bog_joint_left">
+        <inertial>
+            <origin xyz="-0.012499999999999983 -1.0658141036401502e-16 0.02165063094610968" rpy="0.0 -0.0 0.0" />
+            <mass value="0.7849999999999999" />
+            <inertia ixx="0.0002682083333333113" iyy="0.00032708333333333894" izz="0.00026820833333332517" ixy="3.469446951953614e-18" iyz="-2.0158066751253414e-36" ixz="-2.1382117680737565e-50" />
+        </inertial>
+        <visual name="bog_joint_left_visual">
+            <origin xyz="1.7763568394002505e-17 -7.105427357601002e-17 -4.14850127583577e-09" rpy="-1.224646799147256e-16 -1.0471975511965979 3.141592653589793" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog_joint_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="bog_joint_left_collision">
+            <origin xyz="1.7763568394002505e-17 -7.105427357601002e-17 -4.14850127583577e-09" rpy="-1.224646799147256e-16 -1.0471975511965979 3.141592653589793" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog_joint_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="bog_joint_right">
+        <inertial>
+            <origin xyz="-0.012499999999999964 2.5679653603560837e-09 0.02165063094610968" rpy="0.0 -0.0 0.0" />
+            <mass value="0.7849999999999999" />
+            <inertia ixx="0.00026820833333332517" iyy="0.000327083333333332" izz="0.0002682083333333113" ixy="-3.469446951953614e-18" iyz="6.938893903907228e-18" ixz="-3.4694469519536134e-18" />
+        </inertial>
+        <visual name="bog_joint_right_visual">
+            <origin xyz="3.552713678800501e-17 2.5679653603560837e-09 -4.148501311362907e-09" rpy="-1.2246467991473535e-16 -1.047197551196598 -3.141592653589793" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog_joint_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="bog_joint_right_collision">
+            <origin xyz="3.552713678800501e-17 2.5679653603560837e-09 -4.148501311362907e-09" rpy="-1.2246467991473535e-16 -1.047197551196598 -3.141592653589793" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog_joint_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="bog2_right">
+        <inertial>
+            <origin xyz="-0.05624999999999997 2.5679653603560837e-09 0.09742785396647019" rpy="0.0 -0.0 0.0" />
+            <mass value="1.2484885554906688" />
+            <inertia ixx="0.004038080171665154" iyy="0.005337288574722654" izz="0.0014396633655501256" ixy="-1.3877787807814457e-17" iyz="1.3877787807814457e-17" ixz="0.002250294963715968" />
+        </inertial>
+        <visual name="bog2_right_visual">
+            <origin xyz="-0.11249999999999993 2.5679653603560837e-09 0.19485571189221954" rpy="-3.141592653589793 1.047197551196598 3.532649053774702e-32" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog2_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="bog2_right_collision">
+            <origin xyz="-0.11249999999999993 2.5679653603560837e-09 0.19485571189221954" rpy="-3.141592653589793 1.047197551196598 3.532649053774702e-32" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog2_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="bog3_right">
+        <inertial>
+            <origin xyz="-0.09240360568257111 2.5679654314103573e-09 0.05352475454108808" rpy="0.0 -0.0 0.0" />
+            <mass value="1.1855661587482604" />
+            <inertia ixx="0.0012303367891081385" iyy="0.004587934064919655" izz="0.003490973468670666" ixy="6.938893903907228e-18" iyz="1.3877787807814457e-17" ixz="0.0019192822167931334" />
+        </inertial>
+        <visual name="bog3_right_visual">
+            <origin xyz="-0.17637495542004736 2.5679653958832205e-09 0.10183012363092035" rpy="3.141592653589793 0.5235987755982993 -1.9316969582972922e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog3_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="bog3_right_collision">
+            <origin xyz="-0.17637495542004736 2.5679653958832205e-09 0.10183012363092035" rpy="3.141592653589793 0.5235987755982993 -1.9316969582972922e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog3_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wheel_joint_3">
+        <inertial>
+            <origin xyz="-0.01250000000000533 0.000418205373325371 -0.0216506369868398" rpy="0.0 -0.0 0.0" />
+            <mass value="0.9951220950610079" />
+            <inertia ixx="0.0004214756888785143" iyy="0.0004092443193156048" izz="0.0004214756888536453" ixy="1.8041124150158794e-16" iyz="2.7755575615628914e-16" ixz="-2.157996004115148e-14" />
+        </inertial>
+        <visual name="wheel_joint_3_visual">
+            <origin xyz="-0.02499999999999986 2.5679653603560837e-09 -0.04330127208144134" rpy="1.2246467991473532e-16 -1.047197551196598 2.3000538893668714e-32" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_3.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="wheel_joint_3_collision">
+            <origin xyz="-0.02499999999999986 2.5679653603560837e-09 -0.04330127208144134" rpy="1.2246467991473532e-16 -1.047197551196598 2.3000538893668714e-32" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_3.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wheel_joint_2">
+        <inertial>
+            <origin xyz="-0.00903590201577714 -0.0004182053733253 0.023650634552493215" rpy="-9.363352709384397e-97 -0.0 0.0" />
+            <mass value="0.995122095061008" />
+            <inertia ixx="0.0004214756888782645" iyy="0.0004092443193145223" izz="0.00042147568885284037" ixy="1.3877787807814457e-16" iyz="-2.7885679876327174e-16" ixz="2.205353955009315e-14" />
+        </inertial>
+        <visual name="wheel_joint_2_visual">
+            <origin xyz="-0.02153590201578261 -2.56796528930181e-09 0.045301269647113646" rpy="3.3457972765971633e-16 1.0471975511965974 3.345797276597165e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="wheel_joint_2_collision">
+            <origin xyz="-0.02153590201578261 -2.56796528930181e-09 0.045301269647113646" rpy="3.3457972765971633e-16 1.0471975511965974 3.345797276597165e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wheel_joint_1">
+        <inertial>
+            <origin xyz="-0.012499999999990444 -0.000418205373325371 -0.021650636986835965" rpy="0.0 -0.0 0.0" />
+            <mass value="0.9951220950610079" />
+            <inertia ixx="0.0004214756888528126" iyy="0.0004092443193145501" izz="0.0004214756888782645" ixy="2.914335439641036e-16" iyz="-1.6653345369377348e-16" ixz="2.2065682614424986e-14" />
+        </inertial>
+        <visual name="wheel_joint_1_visual">
+            <origin xyz="-0.03415063509461089 -2.5679653603560837e-09 -0.009150636986830493" rpy="2.1211504774498128e-16 0.5235987755982986 4.242300954899627e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="wheel_joint_1_collision">
+            <origin xyz="-0.03415063509461089 -2.5679653603560837e-09 -0.009150636986830493" rpy="2.1211504774498128e-16 0.5235987755982986 4.242300954899627e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="bog3_left">
+        <inertial>
+            <origin xyz="-0.0924036056825712 -3.552713678800501e-17 0.05352475454108808" rpy="0.0 -0.0 0.0" />
+            <mass value="1.1855661587482604" />
+            <inertia ixx="0.0012303367891081385" iyy="0.004587934064919655" izz="0.0034909734686706523" ixy="-5.193230651074106e-35" iyz="1.3521083264824516e-35" ixz="0.0019192822167931195" />
+        </inertial>
+        <visual name="bog3_left_visual">
+            <origin xyz="-0.17637495542004744 -3.552713678800501e-17 0.10183012363092031" rpy="3.141592653589793 0.5235987755982991 -1.9316969582972427e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog3_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="bog3_left_collision">
+            <origin xyz="-0.17637495542004744 -3.552713678800501e-17 0.10183012363092031" rpy="3.141592653589793 0.5235987755982991 -1.9316969582972427e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog3_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="bog2_left">
+        <inertial>
+            <origin xyz="-0.05624999999999997 -3.552713678800501e-17 0.09742785396647005" rpy="0.0 -0.0 0.0" />
+            <mass value="1.2484885554906688" />
+            <inertia ixx="0.004038080171665126" iyy="0.005337288574722571" izz="0.0014396633655501812" ixy="-1.6013979951666265e-35" iyz="-1.3877787807814457e-17" ixz="0.002250294963715954" />
+        </inertial>
+        <visual name="bog2_left_visual">
+            <origin xyz="1.7763568394002505e-17 -7.105427357601002e-17 -3.959279304410757e-09" rpy="-1.224646799147256e-16 -1.0471975511965979 3.141592653589793" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog2_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="bog2_left_collision">
+            <origin xyz="1.7763568394002505e-17 -7.105427357601002e-17 -3.959279304410757e-09" rpy="-1.224646799147256e-16 -1.0471975511965979 3.141592653589793" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/bog2_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wheel_joint_4">
+        <inertial>
+            <origin xyz="-0.01250000000000952 0.0004182028053600817 -0.021650636986825022" rpy="0.0 -0.0 0.0" />
+            <mass value="0.9951220950610079" />
+            <inertia ixx="0.0004214756888528126" iyy="0.0004092443193145501" izz="0.0004214756888782645" ixy="2.914335439641036e-16" iyz="-1.6653345369377348e-16" ixz="2.2051804826617172e-14" />
+        </inertial>
+        <visual name="wheel_joint_4_visual">
+            <origin xyz="0.009150635094610919 7.105427357601002e-17 -0.03415063698683049" rpy="-1.4141003182998189e-16 -0.5235987755982987 -3.141592653589793" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_4.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="wheel_joint_4_collision">
+            <origin xyz="0.009150635094610919 7.105427357601002e-17 -0.03415063698683049" rpy="-1.4141003182998189e-16 -0.5235987755982987 -3.141592653589793" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_4.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wheel_joint_5">
+        <inertial>
+            <origin xyz="-0.009035902015773126 0.0004182028053600462 0.023650634552508275" rpy="0.0 -0.0 0.0" />
+            <mass value="0.9951220950610079" />
+            <inertia ixx="0.0004214756888527986" iyy="0.00040924431931450844" izz="0.00042147568887826437" ixy="-2.775557561562891e-16" iyz="-1.6089560239684883e-16" ixz="-2.205182822321787e-14" />
+        </inertial>
+        <visual name="wheel_joint_5_visual">
+            <origin xyz="-0.0306865371103936 3.552713678800501e-17 0.011150634552502776" rpy="-3.141592653589793 -0.5235987755982989 -5.175966399973733e-17" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_5.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="wheel_joint_5_collision">
+            <origin xyz="-0.0306865371103936 3.552713678800501e-17 0.011150634552502776" rpy="-3.141592653589793 -0.5235987755982989 -5.175966399973733e-17" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_5.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wheel_joint_6">
+        <inertial>
+            <origin xyz="-0.012499999999990621 -0.0004182028053600817 -0.02165063698683575" rpy="0.0 -0.0 0.0" />
+            <mass value="0.9951220950610079" />
+            <inertia ixx="0.0004214756888527571" iyy="0.0004092443193145501" izz="0.00042147568887829223" ixy="2.7755575615628914e-16" iyz="-1.942890293094024e-16" ixz="2.20795604022328e-14" />
+        </inertial>
+        <visual name="wheel_joint_6_visual">
+            <origin xyz="-0.03415063509461106 -7.105427357601002e-17 -0.00915063698683028" rpy="1.4141003182998198e-16 0.523598775598299 2.828200636599724e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_6.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="wheel_joint_6_collision">
+            <origin xyz="-0.03415063509461106 -7.105427357601002e-17 -0.00915063698683028" rpy="1.4141003182998198e-16 0.523598775598299 2.828200636599724e-16" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/wheel_joint_6.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="camera_link">
+        <inertial>
+            <origin xyz="0.0184043697092347 -0.06050000000004126 0.0050000004657985994" rpy="0.0 -0.0 0.0" />
+            <mass value="1.2502576712091855" />
+            <inertia ixx="0.002298945858999991" iyy="0.0002313661140853629" izz="0.002352730403890335" ixy="1.0363888566788937e-15" iyz="-1.6263032587282567e-19" ixz="0.0" />
+        </inertial>
+        <visual name="camera_link_visual">
+            <origin xyz="4.4256448461510446e-09 -0.060500000000000005 0.0050000004657985994" rpy="0.0 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/camera_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="camera_link_collision">
+            <origin xyz="4.4256448461510446e-09 -0.060500000000000005 0.0050000004657985994" rpy="0.0 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/camera_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_front_wheel_link">
+        <inertial>
+            <origin xyz="-3.013169447285691e-09 -7.105427357601002e-17 -0.07500000000000025" rpy="0.0 -0.0 0.0" />
+            <mass value="83.23257036604456" />
+            <inertia ixx="0.6242442777453192" iyy="0.624244277745337" izz="0.9363664166179966" ixy="1.4210854715202004e-14" iyz="-5.329070518200751e-15" ixz="-5.329070518200751e-15" />
+        </inertial>
+        <visual name="left_front_wheel_link_visual">
+            <origin xyz="-3.013169447285691e-09 -1.0658141036401502e-16 -0.15000000000000038" rpy="-1.5707963267949032 8.212248910166459e-16 -0.5235987755983019" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_front_wheel_link_collision">
+            <origin xyz="-3.013169447285691e-09 -1.0658141036401502e-16 -0.15000000000000038" rpy="-1.5707963267949032 8.212248910166459e-16 -0.5235987755983019" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/left_front_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_mid_wheel_link">
+        <inertial>
+            <origin xyz="-4.552502772536826e-09 -2.0157827052003086e-09 -0.07500000000000011" rpy="0.0 -0.0 0.0" />
+            <mass value="83.23257036604456" />
+            <inertia ixx="0.6242442777453228" iyy="0.6242442777453334" izz="0.9363664166179886" ixy="-1.2045919817182948e-14" iyz="-1.2503407770070086e-32" ixz="2.220446049250313e-16" />
+        </inertial>
+        <visual name="left_mid_wheel_link_visual">
+            <origin xyz="-4.552502774757272e-09 -2.0157827052003086e-09 -0.1500000000000001" rpy="-1.5707963267948966 -2.449782889260564e-31 0.5235987755982989" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/left_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_mid_wheel_link_collision">
+            <origin xyz="-4.552502774757272e-09 -2.0157827052003086e-09 -0.1500000000000001" rpy="-1.5707963267948966 -2.449782889260564e-31 0.5235987755982989" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/left_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="left_rear_wheel_link">
+        <inertial>
+            <origin xyz="3.013169731502785e-09 3.552713678800501e-17 -0.07500000000000011" rpy="0.0 -0.0 0.0" />
+            <mass value="83.23257036604456" />
+            <inertia ixx="0.6242442777453192" iyy="0.6242442777453405" izz="0.9363664166179895" ixy="-1.0658141036401503e-14" iyz="-1.1541607172372223e-32" ixz="-1.7763568394002505e-15" />
+        </inertial>
+        <visual name="left_rear_wheel_link_visual">
+            <origin xyz="3.013169731502785e-09 7.105427357601002e-17 -0.1500000000000001" rpy="-1.5707963267948963 -1.2246467991473475e-16 0.523598775598299" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="left_rear_wheel_link_collision">
+            <origin xyz="3.013169731502785e-09 7.105427357601002e-17 -0.1500000000000001" rpy="-1.5707963267948963 -1.2246467991473475e-16 0.523598775598299" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/left_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_front_wheel_link">
+        <inertial>
+            <origin xyz="-3.013169447285691e-09 2.1316282072803005e-16 0.0750000025679655" rpy="0.0 -0.0 0.0" />
+            <mass value="83.23257036604456" />
+            <inertia ixx="0.6242442777453263" iyy="0.6242442777453441" izz="0.936366416617993" ixy="1.2434497875801753e-14" iyz="3.552713678800501e-15" ixz="1.7763568394002505e-15" />
+        </inertial>
+        <visual name="right_front_wheel_link_visual">
+            <origin xyz="-3.013169447285691e-09 1.4210854715202004e-16 2.567965466937494e-09" rpy="-1.570796326794897 -1.8369701987210297e-16 -0.5235987755982986" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_front_wheel_link_collision">
+            <origin xyz="-3.013169447285691e-09 1.4210854715202004e-16 2.567965466937494e-09" rpy="-1.570796326794897 -1.8369701987210297e-16 -0.5235987755982986" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/right_front_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_mid_wheel_link">
+        <inertial>
+            <origin xyz="-4.5525026304282795e-09 -2.0157827407274454e-09 0.07500000256796523" rpy="0.0 -0.0 0.0" />
+            <mass value="83.23257036604456" />
+            <inertia ixx="0.6242442777453263" iyy="0.624244277745337" izz="0.9363664166179904" ixy="-1.1934897514720433e-14" iyz="1.7763568394002505e-15" ixz="1.665334536937735e-16" />
+        </inertial>
+        <visual name="right_mid_wheel_link_visual">
+            <origin xyz="-4.552502632648725e-09 -2.0157827407274454e-09 2.5679651827204e-09" rpy="-1.5707963267948966 8.421745601543823e-32 0.5235987755982993" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/right_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_mid_wheel_link_collision">
+            <origin xyz="-4.552502632648725e-09 -2.0157827407274454e-09 2.5679651827204e-09" rpy="-1.5707963267948966 8.421745601543823e-32 0.5235987755982993" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/right_mid_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="right_rear_wheel_link">
+        <inertial>
+            <origin xyz="3.013169447285691e-09 7.105427357601002e-17 -0.07500000256796537" rpy="0.0 -0.0 0.0" />
+            <mass value="83.23257036604456" />
+            <inertia ixx="0.624244277745323" iyy="0.6242442777453372" izz="0.9363664166179859" ixy="1.243449787580176e-14" iyz="7.694404781581691e-33" ixz="9.618005976976962e-33" />
+        </inertial>
+        <visual name="right_rear_wheel_link_visual">
+            <origin xyz="3.013169447285691e-09 3.552713678800501e-17 -0.15000000256796536" rpy="1.5707963267948968 6.123233995736762e-17 -0.5235987755982986" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="right_rear_wheel_link_collision">
+            <origin xyz="3.013169447285691e-09 3.552713678800501e-17 -0.15000000256796536" rpy="1.5707963267948968 6.123233995736762e-17 -0.5235987755982986" />
+            <geometry>
+                <mesh filename="package://ros3/meshes/right_rear_wheel_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_link_Rigid-1" type="fixed">
+        <origin xyz="-0.015 -0.24144807000000001 0.0" rpy="0.0 -0.0 0.0" />
+        <parent link="base_link" />
+        <child link="c_bar_right" />
+    </joint>
+    <joint name="base_link_Rigid-2" type="fixed">
+        <origin xyz="0.0 0.24800000000000003 -0.015" rpy="-1.5707963267948966 -0.0 0.0" />
+        <parent link="base_link" />
+        <child link="c_bar_left" />
+    </joint>
+    <joint name="base_link_Rigid-3" type="fixed">
+        <origin xyz="0.3 0.0655 0.03747137" rpy="1.0507371110027428e-16 -0.0 0.0" />
+        <parent link="base_link" />
+        <child link="lidar_mount" />
+    </joint>
+    <joint name="lidar_mount_Rigid-4" type="fixed">
+        <origin xyz="0.03284148000000002 -0.06499999999999999 -0.003623469999999989" rpy="0 0.2617993878 0" />
+        <parent link="lidar_mount" />
+        <child link="lidar_link" />
+    </joint>
+    <joint name="c_bar_right_Revolute-5" type="revolute">
+        <origin xyz="0.015 -0.016999999999999994 0.0" rpy="1.5707963267948966 -0.0 0.0" />
+        <parent link="c_bar_right" />
+        <child link="main_mount_right" />
+        <axis xyz="0.0 0.0 1.0" />
+        <limit lower="-1.047198" upper="1.047198" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="c_bar_left_Revolute-6" type="revolute">
+        <origin xyz="0.0 -0.015 0.01" rpy="0.0 -0.0 0.0" />
+        <parent link="c_bar_left" />
+        <child link="main_mount_left" />
+        <axis xyz="0.0 0.0 1.0" />
+        <limit lower="-1.047198" upper="1.047198" effort="1000000" velocity="1000000" />
+    </joint>
+    <joint name="main_mount_left_Rigid-7" type="fixed">
+        <origin xyz="-0.0175 0.0 0.015" rpy="1.5707963267948966 -0.0 -2.0943951023931957" />
+        <parent link="main_mount_left" />
+        <child link="rocker_left" />
+    </joint>
+    <joint name="main_mount_right_Rigid-8" type="fixed">
+        <origin xyz="-0.0175 0.0 0.015" rpy="-1.5707963267948966 -0.0 2.0943951023931953" />
+        <parent link="main_mount_right" />
+        <child link="rocker_right" />
+    </joint>
+    <joint name="main_mount_left_Rigid-9" type="fixed">
+        <origin xyz="0.0175 0.0 0.015" rpy="1.5707963267948966 -0.0 2.0943951023931953" />
+        <parent link="main_mount_left" />
+        <child link="bog1_left" />
+    </joint>
+    <joint name="main_mount_right_Rigid-10" type="fixed">
+        <origin xyz="0.0175 0.0 0.015" rpy="-1.5707963267948966 -0.0 -2.0943951023931953" />
+        <parent link="main_mount_right" />
+        <child link="bog1_right" />
+    </joint>
+    <joint name="bog1_left_Rigid-11" type="fixed">
+        <origin xyz="-2.0742506390281078e-09 0.0 0.22500000359270755" rpy="7.11639149972692e-33 0.5235987755982988 3.141592653589793" />
+        <parent link="bog1_left" />
+        <child link="bog_joint_left" />
+    </joint>
+    <joint name="bog1_right_Rigid-12" type="fixed">
+        <origin xyz="-2.0742506079418634e-09 0.0 0.2250000035927075" rpy="0.0 0.5235987755982987 3.141592653589793" />
+        <parent link="bog1_right" />
+        <child link="bog_joint_right" />
+    </joint>
+    <joint name="bog_joint_right_Rigid-13" type="fixed">
+        <origin xyz="-0.025 0.0 0.043301269999999975" rpy="0.0 -5.551115123125783e-17 0.0" />
+        <parent link="bog_joint_right" />
+        <child link="bog2_right" />
+    </joint>
+    <joint name="bog_joint_right_Rigid-14" type="fixed">
+        <origin xyz="-0.034150639999999996 0.0 0.00915063" rpy="-0.0 -1.5707963267948966 0" />
+        <parent link="bog_joint_right" />
+        <child link="bog3_right" />
+    </joint>
+    <joint name="rocker_right_Rigid-15" type="fixed">
+        <origin xyz="-9.461097805196773e-10 0.0 0.49999999836128994" rpy="-3.141592653589793 0.5235987755982987 -1.4232782999453846e-32" />
+        <parent link="rocker_right" />
+        <child link="wheel_joint_3" />
+    </joint>
+    <joint name="bog3_right_Rigid-16" type="fixed">
+        <origin xyz="-0.18503521 0.0 0.10683012" rpy="3.141592653589793 1.5707963267948966 0" />
+        <parent link="bog3_right" />
+        <child link="wheel_joint_2" />
+    </joint>
+    <joint name="bog2_right_Rigid-17" type="fixed">
+        <origin xyz="-0.1125 0.0 0.19485571000000004" rpy="3.141592653589793 -0.0 -2.465190328815662e-32" />
+        <parent link="bog2_right" />
+        <child link="wheel_joint_1" />
+    </joint>
+    <joint name="bog_joint_left_Rigid-18" type="fixed">
+        <origin xyz="-0.034150639999999996 0.0 0.00915063" rpy="-0.0 -1.5707963267948966 0" />
+        <parent link="bog_joint_left" />
+        <child link="bog3_left" />
+    </joint>
+    <joint name="bog_joint_left_Rigid-19" type="fixed">
+        <origin xyz="-0.025 0.0 0.043301269999999975" rpy="0.0 -0.0 0.0" />
+        <parent link="bog_joint_left" />
+        <child link="bog2_left" />
+    </joint>
+    <joint name="bog2_left_Rigid-20" type="fixed">
+        <origin xyz="-0.1125 0.0 0.19485571000000004" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="bog2_left" />
+        <child link="wheel_joint_4" />
+    </joint>
+    <joint name="bog3_left_Rigid-21" type="fixed">
+        <origin xyz="-0.18503521 0.0 0.10683012" rpy="-3.141592653589793 1.5707963267948966 0" />
+        <parent link="bog3_left" />
+        <child link="wheel_joint_5" />
+    </joint>
+    <joint name="rocker_left_Rigid-22" type="fixed">
+        <origin xyz="-9.461096106555544e-10 0.0 0.49999999836129" rpy="3.141592653589793 0.523598775598299 0.0" />
+        <parent link="rocker_left" />
+        <child link="wheel_joint_6" />
+    </joint>
+    <joint name="base_link_Rigid-23" type="fixed">
+        <origin xyz="0.3 0.0625 0.10647023000000001" rpy="0.0 -0.0 0.0" />
+        <parent link="base_link" />
+        <child link="camera_link" />
+    </joint>
+    <joint name="wheel_joint_4_Revolute-24" type="continuous">
+        <origin xyz="-0.0125 0.035 -0.02165064000000001" rpy="1.5707963267948966 1.5707963267948966 0" />
+        <parent link="wheel_joint_4" />
+        <child link="left_front_wheel_link" />
+        <axis xyz="0.0 0.0 -1.0" />
+    </joint>
+    <joint name="wheel_joint_5_Revolute-25" type="continuous">
+        <origin xyz="-0.009035899999999977 0.035 0.023650630000000002" rpy="1.5707963267948966 1.5707963267948966 0" />
+        <parent link="wheel_joint_5" />
+        <child link="left_mid_wheel_link" />
+        <axis xyz="0.0 -3.0814879110195774e-33 -1.0" />
+    </joint>
+    <joint name="wheel_joint_6_Revolute-26" type="continuous">
+        <origin xyz="-0.0125 -0.035 -0.02165064000000001" rpy="-1.5707963267948966 -1.5707963267948966 0" />
+        <parent link="wheel_joint_6" />
+        <child link="left_rear_wheel_link" />
+        <axis xyz="0.0 1.232595164407831e-32 -1.0" />
+    </joint>
+    <joint name="wheel_joint_1_Revolute-27" type="continuous">
+        <origin xyz="-0.0125 -0.035 -0.02165064000000001" rpy="1.5707963267948966 1.5707963267948966 0" />
+        <parent link="wheel_joint_1" />
+        <child link="right_front_wheel_link" />
+        <axis xyz="0.0 0.0 1.0" />
+    </joint>
+    <joint name="wheel_joint_2_Revolute-28" type="continuous">
+        <origin xyz="-0.009035900000000012 -0.035 0.023650630000000002" rpy="1.5707963267948966 1.5707963267948966 0" />
+        <parent link="wheel_joint_2" />
+        <child link="right_mid_wheel_link" />
+        <axis xyz="1.5407439555097887e-32 -6.162975822039155e-33 1.0" />
+    </joint>
+    <joint name="wheel_joint_3_Revolute-31" type="continuous">
+        <origin xyz="-0.0125 0.035 -0.02165064000000001" rpy="1.5707963267948966 -1.5707963267948966 0" />
+        <parent link="wheel_joint_3" />
+        <child link="right_rear_wheel_link" />
+        <axis xyz="-6.162975822039155e-33 0.0 -1.0" />
+    </joint>
+    <!--
+      Navigation frame convention:
+      base_footprint is the root reference frame and base_link is its child.
+      The transform is identity because the measured vertical distance from
+      the footprint plane to the CAD base_link origin was not supplied.
+      Set origin xyz="0 0 Z" only after measuring that offset in CAD.
+      Nav2 can use base_link as robot_base_frame until that measurement is known.
+    -->
+    <link name="base_footprint" />
+    <joint name="base_footprint_to_base_link" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="base_footprint" />
+        <child link="base_link" />
+    </joint>
+</robot>
